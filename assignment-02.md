@@ -1,6 +1,6 @@
 # CMPS 2200 Assignment 2
 
-**Name:**_________________________
+**Name:** Miles Whiteford
 
 In this assignment we'll work on applying the methods we've learned to analyze recurrences, and also see their behavior
 in practice. As with previous
@@ -16,7 +16,8 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=2W(n/3)+1$
 .  
-.  
+.  2n/3 grows asymptotically slower than 1, therefore root dominant
+  O(n)
 . 
 .  
 . 
@@ -24,7 +25,9 @@ Derive asymptotic upper bounds of work for each recurrence below.
 . 
  
 * $W(n)=5W(n/4)+n$
-.  
+.  (5/n)/4 grows asymptotically faster than n, therefore leaf dominant
+
+  O(n^log4(5))
 .
 .  
 . 
@@ -35,7 +38,8 @@ Derive asymptotic upper bounds of work for each recurrence below.
 . 
 
 * $W(n)=7W(n/7)+n$
-.  
+.  (7n)/7 = n, therefore balanced
+  O(nlogn)
 . 
 .  
 .  
@@ -44,8 +48,10 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .
 
 * $W(n)=9W(n/3)+n^2$
-.  
-.
+.  leaf = 9(n/3)^2 = (9n^2)/9 = n^2
+.  root = n^2, therefore balanced
+
+  O(n^2*logn)
 . 
 .  
 . 
@@ -55,9 +61,9 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .
 
 * $W(n)=8W(n/2)+n^3$
-.  
-.
-.  
+.  leaf = 8(n/2)^3 = (8n^3 / 8) = n^3
+.  root = n^3, therefore balanced
+.  O(n^3*logn)
 .  
 .  
 .  
@@ -67,19 +73,18 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 
 * $W(n)=49W(n/25)+n^{3/2}\log n$
-.  
-.  
-. 
-.  
+.  leaf = n^log25(49) = n^1.21
+.  root = n^3/2 * logn, therefore root dominant
+.  O(n^3/2 * logn)
 . 
 .  
 .  
 .  
 
 * $W(n)=W(n-1)+2$
-.  
-.  
-. 
+.  leaf = O(n)
+.  root = 2, therefore leaf dominant
+. O(n)
 .  
 . 
 .  
@@ -87,9 +92,9 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 
 * $W(n)= W(n-1)+n^c$, with $c\geq 1$
-.  
-.  
-.  
+.  leaf = O(n)
+.  root = O(n^c), therefore root dominant
+.  O(n^c)
 .  
 .  
 . 
@@ -97,7 +102,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 . 
 
 * $W(n)=W(\sqrt{n})+1$
-.  
+.  O(loglogn)
 .  
 .  
 .  
@@ -127,14 +132,23 @@ Suppose that for a given task you are choosing between the following three algor
     Which algorithm would you choose?
 
 
-.  
-.  
-.  
-.  
-. 
-. 
+.  A: W(n) = 5W(n/2) + n
+.  leaf = n^log2(5)
+.  root = n, therefore leaf dominant
+.  O(n^log2(5))
 
+. B: W(n) = 2W(n-1) + 1
+. leaf = O(n)
+  root = O(1), therefore leaf dominant
+  O(n)
 
+  C: W(n) = 9W(n/3) + n^2
+  leaf = 9(n/3)^2 = n^2
+  root= n^2, therefore balanced
+  O(n^2 * logn)
+
+C < A < B, Choose B
+  
 
 ## Part 3: Parenthesis Matching
 
@@ -161,9 +175,7 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 **3b.** What are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
 
 **enter answer here**
-
-.  
-. 
+   
 
 
 
