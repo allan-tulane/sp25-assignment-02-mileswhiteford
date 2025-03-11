@@ -174,8 +174,11 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3b.** What are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
 
-**enter answer here**
-   
+W(n) = W(n-1) +O(1)
+S(n) = S(n-1) + O(1)
+W(n) = O(n)
+S(n) = O(n)
+
 
 
 
@@ -188,7 +191,8 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3d.** Assume that any `map`s are done in parallel, and that we use the efficient implementation of `scan` from class. What are the recurrences for the Work and Span of this solution? 
 
-**enter answer here**
+W(n) = O(n)
+S(n) = O(logn)
 
 .  
 .  
@@ -209,7 +213,10 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **3f.** Assuming any recursive calls are done in parallel, what are the recurrences for the Work and Span of this solution? What are their Big Oh solutions?
 
-**enter answer here**
+W(n) = 2W(n/2) + O(1)
+S(n) = 2S(n/2) + O(1)
+W(n) = O(n)
+S(n) = O(logn)
 
 .  
 . 
