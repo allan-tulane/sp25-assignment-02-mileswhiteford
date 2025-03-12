@@ -16,8 +16,8 @@ Derive asymptotic upper bounds of work for each recurrence below.
 
 * $W(n)=2W(n/3)+1$
 .  
-.  2n/3 grows asymptotically slower than 1, therefore root dominant
-  O(n^log2(3))
+.  leaf dominant
+  O(n^log3(2))
 . 
 .  
 . 
@@ -94,7 +94,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 * $W(n)= W(n-1)+n^c$, with $c\geq 1$
 .  leaf = O(n)
 .  root = O(n^c), therefore root dominant
-.  O(n^c)
+.  O(n^(c+1))
 .  
 .  
 . 
@@ -138,16 +138,16 @@ Suppose that for a given task you are choosing between the following three algor
 .  O(n^log2(5))
 
 . B: W(n) = 2W(n-1) + 1
-. leaf = O(n)
-  root = O(1), therefore leaf dominant
-  O(n)
+. leaf = O(2^n)
+  root = 1, therefore leaf dominant
+  O(2^n)
 
   C: W(n) = 9W(n/3) + n^2
   leaf = 9(n/3)^2 = n^2
   root= n^2, therefore balanced
   O(n^2 * logn)
 
-C < A < B, Choose B
+B < A < C, Choose C
   
 
 ## Part 3: Parenthesis Matching
