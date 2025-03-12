@@ -17,7 +17,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 * $W(n)=2W(n/3)+1$
 .  
 .  2n/3 grows asymptotically slower than 1, therefore root dominant
-  O(n)
+  O(n^log2(3))
 . 
 .  
 . 
